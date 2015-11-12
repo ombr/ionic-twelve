@@ -5,15 +5,18 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var jade = require('gulp-jade');
 var sh = require('shelljs');
 var coffee = require('gulp-coffee');
 
 var paths = {
   sass: ['./sass/**/*.sass'],
-  coffee: ['./coffee/**/*.coffee']
+  coffee: ['./coffee/**/*.coffee'],
+  jade: ['./jade/**/*.jade']
 };
 
-gulp.task('default', ['sass', 'coffee']);
+gulp.task('default', ['sass', 'coffee', 'jade']);
+
 
 gulp.task('sass', function(done) {
   gulp.src('./sass/ionic.app.sass')
@@ -34,9 +37,16 @@ gulp.task('coffee', function() {
     .pipe(gulp.dest('./www/js'));
 });
 
+gulp.task('jade', function () {
+    return gulp.src(paths.jade)
+      .pipe(jade())
+      .pipe(gulp.dest('./www/'))
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.coffee, ['coffee']);
+  gulp.watch(paths.jade, ['jade']);
 });
 
 gulp.task('install', ['git-check'], function() {
