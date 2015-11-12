@@ -18,7 +18,10 @@
   "engines": {
     "node": "4.2.2"
   },
-  "post-install": "./node_modules/.bin/gulp",
+
+  "scripts": {
+    "postinstall": "./node_modules/.bin/gulp"
+  },
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
