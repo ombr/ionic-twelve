@@ -1,0 +1,8 @@
+{
+  "name":"ionic-twelve",
+  "scripts":{
+    "postdeploy":"npm start"
+  },
+  "env":{},
+  "addons":[]
+}
