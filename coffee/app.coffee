@@ -1,7 +1,14 @@
-angular.module('starter', ['ionic'])
-.run ($ionicPlatform)->
+angular.module('starter',
+  [
+    'ionic',
+    'ionic.service.core',
+    'ionic.service.analytics'
+  ]
+)
+.run ($ionicPlatform, $ionicAnalytics)->
   $ionicPlatform.ready ->
-    console.log 'App Started in coffee !'
+    $ionicAnalytics.register()
+    console.log 'App Started'
     if window.cordova && window.cordova.plugins.Keyboard
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true)
     if window.StatusBar
