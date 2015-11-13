@@ -13,6 +13,8 @@ angular.module('starter',
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true)
     if window.StatusBar
       StatusBar.styleDefault()
+.run ($ionicAnalytics)->
+  $ionicAnalytics.track('App Started', {})
 .config ($stateProvider, $urlRouterProvider)->
   $urlRouterProvider.otherwise('/')
   $stateProvider
