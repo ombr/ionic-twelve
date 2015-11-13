@@ -2,8 +2,5 @@
   "name":"ionic-twelve",
   "success_url": "/",
   "addons": [ "papertrail" ],
-  "scripts":{
-    "postdeploy":"npm start"
-  },
   "env":{}
 }
