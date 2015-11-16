@@ -1,6 +1,6 @@
 {
   "name": "ionic-twelve",
-  "app_id": "",
+  "app_id": "1658fe6c",
   "gulpStartupTasks": [
     "sass",
     "watch"
